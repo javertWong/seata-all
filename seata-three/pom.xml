@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jw</groupId>
-    <artifactId>seata-two</artifactId>
+    <artifactId>seata-three</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>seata-two</name>
+    <name>seata-three</name>
     <description>Demo project for Spring Boot</description>
     <packaging>jar</packaging>
     <parent>
@@ -76,7 +76,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.jw.seatatwo.SeataTwoApplication</mainClass>
+                    <mainClass>com.jw.seatathree.SeataThreeApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

@@ -33,8 +33,8 @@ public class UserController {
         userService.save(user);
         ResponseEntity<String> responseEntity1 = restTemplate.getForEntity("http://localhost:8081/user/insert", String.class);
         System.out.println(responseEntity1.getBody());
-//        ResponseEntity<String> responseEntity2 = restTemplate.getForEntity("http://localhost:8082/user/insert", String.class);
-//        System.out.println(responseEntity2.getBody());
+        ResponseEntity<String> responseEntity2 = restTemplate.getForEntity("http://localhost:8082/user/insert", String.class);
+        System.out.println(responseEntity2.getBody());
         return "success.";
     }
 }
