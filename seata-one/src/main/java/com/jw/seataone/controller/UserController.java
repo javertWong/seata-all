@@ -3,6 +3,7 @@ package com.jw.seataone.controller;
 
 import com.jw.seataone.pojo.User;
 import com.jw.seataone.service.impl.UserServiceImpl;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,10 +27,11 @@ public class UserController {
     private RestTemplate restTemplate;
 
     @GetMapping("/insert")
+    @GlobalTransactional
     public String insert() {
         User user = new User();
         user.setName("张三");
-        user.setAge(18);
+        user.setAge(180);
         userService.save(user);
         ResponseEntity<String> responseEntity1 = restTemplate.getForEntity("http://localhost:8081/user/insert", String.class);
         System.out.println(responseEntity1.getBody());

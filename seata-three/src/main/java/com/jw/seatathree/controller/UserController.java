@@ -3,6 +3,7 @@ package com.jw.seatathree.controller;
 
 import com.jw.seatathree.pojo.User;
 import com.jw.seatathree.service.impl.UserServiceImpl;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +22,13 @@ public class UserController {
     private UserServiceImpl userService;
 
     @GetMapping("/insert")
+    @GlobalTransactional
     public String insert() {
         User user = new User();
         user.setName("张三");
-        user.setAge(18);
+        user.setAge(183);
         userService.save(user);
+        int i=1/0;
         return "seata-three success.";
     }
 }
